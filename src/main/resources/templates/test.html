@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label>ID</label>
+    <input name="id" id="id" type="text" >
+    <button type="submit" onclick="searchMember()">搜索</button>
+</div>
+<div>
+    <p>姓名：<span id="name">---</span></p>
+    <p>性别：<span id="sex">---</span></p>
+    <p>手机号：<span id="telephone">---</span></p>
+</div>
+<script>
+
+    function searchMember() {
+        var id = $("#id").val();
+        $.ajax({
+            url: "/city",
+            method: "post",
+            data: {
+                id: id
+            },
+            dataType: "text",
+            success: function(data) {
+                console.log(data)
+
+                if (data.status == "success") {
+
+                    $("#name").html(data.member.name);
+                    $("#sex").html(data.member.sex);
+                    $("#telephone").html(data.member.telephone);
+                }
+            },
+            error: function(data) {
+                alert("wrong");
+            }
+        });
+    }
+</script>
+
+<script src="jquery-3.6.0.js"></script>
+</body>
+</html>

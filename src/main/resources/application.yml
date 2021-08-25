@@ -1,0 +1,16 @@
+
+
+
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: ss1249517881
+
+  redis:
+    host: 127.0.0.1
+
+mybatis:
+  mapper-locations: classpath:Mybatis/mapper/*.xml
