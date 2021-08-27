@@ -25,15 +25,16 @@
             data: {
                 id: id
             },
-            dataType: "text",
+            dataType: "Json",
             success: function(data) {
-                console.log(data)
-
+                console.log(data.body)
+                console.log(data.body.country)
+                var city=JSON.parse(data.body)
                 if (data.status == "success") {
 
-                    $("#name").html(data.member.name);
-                    $("#sex").html(data.member.sex);
-                    $("#telephone").html(data.member.telephone);
+                    $("#name").html(city.id);
+                    $("#sex").html(city.country);
+                    $("#telephone").html(city.name);
                 }
             },
             error: function(data) {

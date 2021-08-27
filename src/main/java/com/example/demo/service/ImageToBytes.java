@@ -6,7 +6,6 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.Arrays;
 
 public class ImageToBytes {
     public static byte[] image2Bytes(String imagePath) {
@@ -27,8 +26,8 @@ public class ImageToBytes {
     }
 
     public static void main(String[] args) throws UnsupportedEncodingException {
-        byte[] bytes=image2Bytes("D:\\Users\\jtang7\\Desktop\\QQ图片20210816115633.jpg");
-        for(byte b:bytes)
+        byte[] bytes = image2Bytes("D:\\Users\\jtang7\\Desktop\\QQ图片20210816115633.jpg");
+        for (byte b : bytes)
             System.out.print(b);
     }
 }

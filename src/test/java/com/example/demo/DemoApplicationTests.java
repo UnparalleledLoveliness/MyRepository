@@ -32,5 +32,4 @@ class DemoApplicationTests {
         operations.set("你好","世界");
         System.out.println(operations.get("你好"));
     }
-
 }
