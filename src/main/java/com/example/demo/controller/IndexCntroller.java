@@ -34,7 +34,6 @@ public class IndexCntroller {
   @ResponseBody
   @PostMapping("/city")
   public String getCityById(@RequestParam("id") long id) throws JSONException {
-
     System.out.println(id);
     JSONObject result = new JSONObject();
     City c = cityService.getById(id);

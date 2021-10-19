@@ -1,5 +1,5 @@
 package com.example.demo.bean;
-import org.apache.ibatis.annotations.Mapper;
+
 import org.dozer.Mapping;
 
 import lombok.Data;
@@ -8,6 +8,7 @@ import lombok.Data;
 public class User {
     @Mapping("longid")
     private long id;
-    @Mapping("id")
     private String name;
+    private String userName;
+    private String password;
 }
