@@ -3,9 +3,15 @@ package com.example.demo.mq;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.nio.charset.StandardCharsets;
 
 public class Send {
+
+  @Autowired
+  RabbitTemplate rabbitTemplate;
 
   private final static String QUEUE_NAME = "simple_queue";
 

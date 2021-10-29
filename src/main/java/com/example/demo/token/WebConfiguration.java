@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
 
-@Configuration
+//@Configuration
 public class WebConfiguration implements WebMvcConfigurer {
 
   @Autowired

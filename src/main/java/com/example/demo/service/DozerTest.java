@@ -8,7 +8,6 @@ import org.dozer.Mapper;
 
 public class DozerTest {
   public static void main(String[] args) {
-
     Mapper mapper = new DozerBeanMapper();
     User user = new User();
     user.setId(10005);

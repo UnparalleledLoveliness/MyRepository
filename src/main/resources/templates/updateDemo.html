@@ -2,15 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>龙岗酒店数据统计</title>
 </head>
 <body>
-
-<h1>hello worlds</h1>
-<form action="/klvchen/" method="post" enctype="multipart/form-data">
-  <p><input type="file" name="upload"></p>
-  <p><input type="submit" value="submit"></p>
+<h1>测试版本</h1>
+<form name="fileForm" id="fileForm" method="post" enctype="multipart/form-data">
+  <p><input type="file" name="file"></p>
+  <p><input type="button" value="submit" onclick="send()"></p>
 </form>
+<div id="orders">
+  <h2>文件解析如下：</h2>
+</div>
 
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  function send() {
+    const fd = new FormData(document.getElementById("fileForm"));
+    $.ajax(
+            {
+              url: "/read",
+              type: "POST",
+              data: fd,
+              dataType: "Json",
+              processData: false,  // 告诉jQuery不要去处理发送的数据
+              contentType: false,   // 告诉jQuery不要去设置Content-Type请求头
+              success: function (map) {
+                for (const key in map) {
+                  const order = document.createElement('p');
+                  const text = document.createTextNode(key);
+                  order.setAttribute('onclick','show('+"'"+key+"'"+')');
+                  order.appendChild(text);
+                  document.getElementById('orders').appendChild(order);
+                  let price = 0;
+                  for (const key2 in map[key]) {
+                    const order = document.createElement('li');
+                    const text = document.createTextNode(JSON.stringify(map[key][key2]));
+                    order.appendChild(text);
+                    const ui = document.createElement('ui');
+                    ui.id = key;
+                    ui.appendChild(order)
+                    ui.style.display = 'none';
+                    document.getElementById('orders').appendChild(ui);
+                    price = price + map[key][key2].allPrice;
+                  }
+                  const priceField = document.createElement('li');
+                  const prices = document.createTextNode(price);
+                  priceField.appendChild(prices);
+                  document.getElementById('orders').appendChild(priceField);
+                }
+              }
+            });
+  }
+</script>
+<script>
+  function show(id) {
+    const lis = document.getElementById(id);
+    if (lis.style.display == 'block')
+      lis.style.display = 'none';
+    else lis.style.display = 'block';
+  }
+</script>
 </body>
 </html>
