@@ -1,15 +1,14 @@
-
 spring:
 
   application:
     name: Spring 整合
 
-#  rabbitmq:
-#    host: localhost
-#    port: 5672
-#    username: jtang7
-#    password: 124951
-#    virtual-host: test
+  #  rabbitmq:
+  #    host: localhost
+  #    port: 5672
+  #    username: jtang7
+  #    password: 124951
+  #    virtual-host: test
 
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
@@ -22,3 +21,6 @@ spring:
 
 mybatis:
   mapper-locations: classpath:Mybatis/mapper/*.xml
+
+server:
+  port: 8080
