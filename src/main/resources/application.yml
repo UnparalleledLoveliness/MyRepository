@@ -11,14 +11,14 @@ spring:
 #    password: 124951
 #    virtual-host: test
 
-  datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test
-    username: root
-    password: ss1249517881
+#  datasource:
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/test
+#    username: root
+#    password: ss1249517881
 
   redis:
     host: localhost
 
-mybatis:
-  mapper-locations: classpath:Mybatis/mapper/*.xml
+#mybatis:
+#  mapper-locations: classpath:Mybatis/mapper/*.xml

@@ -30,7 +30,7 @@
                 console.log(data.body)
                 console.log(data.body.country)
                 var city=JSON.parse(data.body)
-                if (data.status == "success") {
+                if (data.status === "success") {
 
                     $("#name").html(city.id);
                     $("#sex").html(city.country);
