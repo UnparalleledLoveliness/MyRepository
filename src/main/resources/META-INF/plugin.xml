@@ -1,0 +1,23 @@
+<idea-plugin>
+  <id>com.yishu.plugin</id>
+  <name>商品中台代码生成插件</name>
+  <version>1.0</version>
+  <vendor email="1249517881@qq.com" url="http://www.xxx.com">jtang</vendor>
+  <description>-----------------用于商品中台组内生成固定job类代码插件--------------------</description>
+  <idea-version since-build="173.0"/>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.java</depends>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="generator" class="com.tj.demo12.generator" text="Generator" description="Generator">
+      <add-to-group group-id="GenerateGroup" anchor="last"/>
+    </action>
+  </actions>
+</idea-plugin>
