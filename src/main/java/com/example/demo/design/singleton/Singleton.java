@@ -15,18 +15,15 @@ package com.example.demo.design.singleton;
  */
 
 public class Singleton {
-  private static Singleton instance=null;
+  private static Singleton instance = null;
 
-  private Singleton(){
+  private Singleton() {
   }
 
-  public static Singleton getInstance()
-  {
-    if(instance==null)
-      synchronized (instance)
-      {
-        instance=new Singleton();
-      }
+  public static synchronized Singleton getInstance() {
+    if (instance == null) {
+      instance = new Singleton();
+    }
     return instance;
   }
 }
